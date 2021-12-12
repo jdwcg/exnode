@@ -1,16 +1,10 @@
-var fruit = [
-   {name:'사과', price: 100},
-   {name:'오렌지', price: 100},
-   {name:'딸기', price: 100},
-   {name:'배', price: function(a,b){
-      return a + b;
-   }},
-];
+process.on('exit', function(){
+   console.log('exit이벤트발생함.');
+});
 
-var i = 0;
-while(i < fruit.length) {
-   console.log(fruit[i].name);
-   i = i + 1;
-}
+setTimeout(function(){
+   console.log('2초후 실행됨');
+   process.exit();
+}, 2000);
 
-console.log(fruit[3].price(10,10));
+console.log('2초후에 실행될것임.');
